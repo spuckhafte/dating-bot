@@ -256,7 +256,7 @@ client.on("message", async(message) => {
 
     async function writeLoveSentence() {
         let embed = new Discord.MessageEmbed()
-            .setTitle('Complete the Sentence')
+            .setTitle('Rewrite the Sentence')
             .setDescription(`${author} \`Be ready in 3 seconds\``)
         send(embed)
 
