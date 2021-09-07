@@ -3,6 +3,5 @@
 2. Check your date progress
 3. Complete tasks to gain points <br>
 *and much more coming soon...*
-<hr>
-<br>
+<hr></hr>
 **NOTE: UNDER DEVELOPMENT**
