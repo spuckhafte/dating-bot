@@ -560,7 +560,7 @@ client.on("message", async(message) => {
                 send(date_embed)
             }
         } else {
-            send('`LOVE YOURSELF` : Live')
+            send('`LOVE YOURSELF` : Live example (lol)')
         }
     }
 })
