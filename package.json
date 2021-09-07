@@ -1,0 +1,22 @@
+{
+  "name": "dating-bot",
+  "version": "1.0.0",
+  "description": "Discord bot containg a dating game",
+  "main": "bot.js",
+  "type": "module",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "fs": "0.0.1-security",
+    "ms": "^2.1.3",
+    "node": "^16.6.1",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.12",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rakshit Joshi",
+  "license": "ISC"
+}
