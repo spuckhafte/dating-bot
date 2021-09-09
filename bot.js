@@ -94,28 +94,32 @@ async function dumpInformation(i, lover1, lover2, points, start, end, command) {
         const information = data[index]
 
         let timeSpent = (end-information.start)/(60*60*24*1000)
-        if (timeSpent<1) {
-            timeSpent = "Less than 1 day"
-        } else {
-            timeSpent = parseInt(timeSpent)
+        if (timeSpent<0.5) {
+            timeSpent = "Less than a day"
+        }
+        else if (timeSpent>=0.5 && timeSpent<1){
+            timeSpent = "Approximately half day"
+        }
+        else {
+            timeSpent = `${parseInt(timeSpent)} day`
         }
 
-        try {
-            if (timeSpent<1 && timeSpent > 0.5) {
-                pointsChange(lover1, 5, '+')
-            }
-            if (timeSpent<3 && timeSpent>=1) {
-                pointsChange(lover1, 10, '+')
-            }
-            if (timeSpent >= 3 && timeSpent < 6) {
-                pointsChange(lover1, 20, '+')
-            }
-            if (timeSpent >=6) {
-                pointsChange(lover1, 50, '+')
-            }
-        } catch (err) {
-            console.log(err)
-        }
+        // try {
+        //     if (timeSpent<1 && timeSpent > 0.5) {
+        //         pointsChange(lover1, 5, '+')
+        //     }
+        //     if (timeSpent<3 && timeSpent>=1) {
+        //         pointsChange(lover1, 10, '+')
+        //     }
+        //     if (timeSpent >= 3 && timeSpent < 6) {
+        //         pointsChange(lover1, 20, '+')
+        //     }
+        //     if (timeSpent >=6) {
+        //         pointsChange(lover1, 50, '+')
+        //     }
+        // } catch (err) {
+        //     console.log(err)
+        // }
 
 
         let status = ""
@@ -256,13 +260,13 @@ client.on("message", async(message) => {
 
     async function writeLoveSentence() {
         let embed = new Discord.MessageEmbed()
-            .setTitle('Rewrite the Sentence')
+            .setTitle('Complete the Sentence')
             .setDescription(`${author} \`Be ready in 3 seconds\``)
         send(embed)
 
         await sleep(3000)
 
-        let taskSentence = Sentences[await getRandomInt(1,11)]
+        let taskSentence = Sentences[await getRandomInt(1,10)]
         let taskEmbed = new Discord.MessageEmbed()
             .setTitle(`TASK for ${author.username.toUpperCase()}`)
             .setDescription('Write the given sentence within **8 seconds**')
@@ -298,7 +302,7 @@ client.on("message", async(message) => {
 
         await sleep(5000)
 
-        taskSentence = Sentences[await getRandomInt(1,11)]
+        taskSentence = Sentences[await getRandomInt(1,10)]
         taskEmbed = new Discord.MessageEmbed()
             .setTitle(`TASK for ${mention.username.toUpperCase()}`)
             .setDescription('Write the given sentence within **8 seconds**')
@@ -329,7 +333,7 @@ client.on("message", async(message) => {
             }
             
         })
-        await sleep(1000)
+        await sleep(3000)
         sendStatus()
     }
 
@@ -560,9 +564,9 @@ client.on("message", async(message) => {
                 send(date_embed)
             }
         } else {
-            send('`LOVE YOURSELF` : Live example (lol)')
+            send('`LOVE YOURSELF` : Live')
         }
     }
 })
 
-client.login(TOKEN)
+client.login('ODg0MDk5Njc2MDEyNDMzNDQ4.YTTj_A.Ol42_NuI9QcwDA44217r8XbCGB0')
