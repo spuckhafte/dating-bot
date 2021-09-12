@@ -569,4 +569,4 @@ client.on("message", async(message) => {
     }
 })
 
-client.login('ODg0MDk5Njc2MDEyNDMzNDQ4.YTTj_A.Ol42_NuI9QcwDA44217r8XbCGB0')
+client.login(TOKEN)
